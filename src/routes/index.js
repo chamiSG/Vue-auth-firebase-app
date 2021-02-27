@@ -11,6 +11,17 @@ const router = new Router({
     base: process.env.BASE_URL,
     routes: [
         {
+        path: '*',
+        redirect: '/'
+    },
+    {
+        path: '/',
+        name: 'home',
+        meta: {
+            requiresAuth: true
+    }
+    },
+    {
         path: '/login',
         name: 'login',
         component: Login

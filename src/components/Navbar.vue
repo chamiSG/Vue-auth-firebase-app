@@ -1,7 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+  <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
     <div class="container">
-      <router-link to="/" class="navbar-brand">Vue Firebase Auth</router-link>
+      <router-link to="#" class="navbar-brand font-weight-semibold">Account Managment</router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -17,7 +17,7 @@
         <ul class="navbar-nav mr-auto"></ul>
         <ul class="navbar-nav ml-auto">
           <template v-if="user.loggedIn">
-            <div class="nav-item">{{user.data.displayName}}</div>
+            <li class="nav-item"><span class="dispay-name">{{user.data.displayName}}</span></li>
             <li class="nav-item">
               <a class="nav-link" @click.prevent="signOut">Sign out</a>
             </li>
@@ -52,10 +52,22 @@ export default {
         .signOut()
         .then(() => {
           this.$router.replace({
-            name: "home"
+            name: "login"
           });
         });
     }
   }
 };
 </script>
+
+<style scoped>
+.dispay-name {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #fff;
+}
+.navbar{
+  background: #273142;
+  box-shadow: 0 1px 5px 0 #18191a;
+}
+</style>

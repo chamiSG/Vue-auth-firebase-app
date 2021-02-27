@@ -6,7 +6,10 @@
     </main>
   </div>
 </template>
-
+<style>
+@import "https://unpkg.com/primitive-ui/dist/css/main.css";
+@import "./assets/app.css";
+</style>
 <script>
 import navbar from "./components/Navbar";
 
@@ -17,3 +20,8 @@ export default {
 }
 </script>
 
+<style scoped>
+a {
+  color: #42b983;
+}
+</style>
